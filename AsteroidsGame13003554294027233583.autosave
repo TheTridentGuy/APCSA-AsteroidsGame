@@ -1,0 +1,9 @@
+//your variable declarations here
+public void setup() 
+{
+  Spaceship ship = new Spaceship();
+}
+public void draw() 
+{
+  ship.show();
+}

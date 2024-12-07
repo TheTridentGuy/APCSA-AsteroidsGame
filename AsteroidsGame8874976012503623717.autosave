@@ -1,0 +1,14 @@
+//your variable declarations here
+Spaceship ship = new Spaceship(3, new int[] {4, -4, -4}, new int[]{0, -4, 4}, color(255,255,255), 300, 300, 1, 1, 0);
+
+public void setup() 
+{
+  size(600, 600);
+}
+public void draw() 
+{
+  background(0);
+  ship.accelerate(1);
+  ship.move();
+  ship.show();
+}
