@@ -11,4 +11,10 @@ class Spaceship extends Floater
         this.myYspeed = myYspeed;
         this.myPointDirection = myPointDirection;
     }
+    public void hitItChewie(){
+      this.myCenterX = (int)(Math.random()*600);
+      this.myCenterY = (int)(Math.random()*600);
+      this.myXspeed = 0;
+      this.myYspeed = 0;
+    }
 }
