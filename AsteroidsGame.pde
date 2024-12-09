@@ -1,5 +1,5 @@
 Spaceship ship = new Spaceship(3, new int[] {15, -6, -6}, new int[] {0, -6, 6}, color(255,255,255), 300, 300, 0, 0, 0);
-HashMap<Character, Boolean> keys = new HashMap<Character, Boolean>();
+ArrayList<Character> keys = new ArrayList<Character>();
 Star[] stars = new Star[100];
 ArrayList<Asteroid> asteroids = new ArrayList<Asteroid>();
 
@@ -17,16 +17,16 @@ public void setup()
 public void draw() 
 {
   background(0);
-   if(keys.getOrDefault('w', false)){
+   if(keys.indexOf('w') > -1){
      ship.accelerate(.1);
    }
-   if(keys.getOrDefault('s', false)){
+   if(keys.indexOf('s') > -1){
      ship.accelerate(-.1);
    }
-   if(keys.getOrDefault('a', false)){
+   if(keys.indexOf('a') > -1){
      ship.turn(-4);
    }
-   if(keys.getOrDefault('d', false)){
+   if(keys.indexOf('d') > -1){
      ship.turn(4);
    }
   for(Star star: stars){
@@ -43,8 +43,16 @@ void keyPressed(){
   if(key == 'q'){
     ship.hitItChewie();
   }
-  keys.put(key, true);
+  int i = keys.indexOf(key);
+  if(i > -1){
+    keys.set(i, key);
+  }else{
+    keys.add(key);
+  }
 }
 void keyReleased(){
-  keys.put(key, false);
+  int i = keys.indexOf(key);
+  if(i > -1){
+    keys.remove(i);
+  }
 }
