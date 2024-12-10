@@ -26,8 +26,10 @@ class Spaceship extends Floater
         this.trailx = new ArrayList<Integer>(this.trailx.subList(1, this.trailx.size()-1));
         this.traily = new ArrayList<Integer>(this.traily.subList(1, this.traily.size()-1));
       }
-      this.trailx.add(new Integer((int)(this.myCenterX + 10 * Math.cos(Math.toRadians(this.myPointDirection-180)))));
-      this.traily.add(new Integer((int)(this.myCenterY + 10 * Math.sin(Math.toRadians(this.myPointDirection-180)))));
+      Integer newx = new Integer((int)(this.myCenterX + 10 * Math.cos(Math.toRadians(this.myPointDirection-180))));
+      Integer newy = new Integer((int)(this.myCenterY + 10 * Math.sin(Math.toRadians(this.myPointDirection-180))));
+      this.trailx.add(newx);
+      this.traily.add(newy);
       super.move();
     }
     public void show(){
