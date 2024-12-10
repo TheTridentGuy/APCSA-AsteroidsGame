@@ -23,8 +23,8 @@ class Spaceship extends Floater
     }
     public void move(){
       if(this.trailx.size() > (int)(Math.random()*10)+20){
-        this.trailx = new ArrayList<>(this.trailx.subList(1, this.trailx.size()-1));
-        this.traily = new ArrayList<>(this.traily.subList(1, this.traily.size()-1));
+        this.trailx = new ArrayList<Integer>(this.trailx.subList(1, this.trailx.size()-1));
+        this.traily = new ArrayList<Integer>(this.traily.subList(1, this.traily.size()-1));
       }
       this.trailx.add((Integer)(int)(this.myCenterX + 10 * Math.cos(Math.toRadians(this.myPointDirection-180))));
       this.traily.add((Integer)(int)(this.myCenterY + 10 * Math.sin(Math.toRadians(this.myPointDirection-180))));
